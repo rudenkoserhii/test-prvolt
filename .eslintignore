@@ -3,3 +3,5 @@ build/*
 dist/*
 public/*
 **/node_modules/*
+postcss.config.js
+tailwind.config.js
