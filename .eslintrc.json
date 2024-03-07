@@ -10,7 +10,6 @@
   ],
   "overrides": [
     {
-      "extends": ["xo-typescript"],
       "files": ["*.ts", "*.tsx"]
     }
   ],
