@@ -1,17 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Pagination } from 'flowbite-react'
+import { useSelector } from 'react-redux'
+import { toDosValue } from '../../redux/to-do/selectors'
 
-function PaginationComponent(): React.JSX.Element {
-  const [currentPage, setCurrentPage] = useState(1)
+function PaginationComponent({
+  page,
+  setPage,
+}: {
+  page: number
+  setPage: (next: number) => void
+}): React.JSX.Element {
+  const { toDos } = useSelector(toDosValue)
 
-  const onPageChange = (page: number): void => setCurrentPage(page)
+  const onPageChange = (next: number): void => setPage(next)
 
   return (
     <div className="flex overflow-x-auto sm:justify-center">
       <Pagination
         layout="table"
-        currentPage={currentPage}
-        totalPages={100}
+        currentPage={page}
+        totalPages={toDos.length}
         onPageChange={onPageChange}
         showIcons
       />

@@ -17,14 +17,13 @@ export const toDosSlice = createSlice({
       const index = state.toDos.findIndex(
         element => element.id === action.payload.id,
       )
-      const toDo: ToDoType = {
-        'id': action.payload.id,
-        'title': action.payload.title,
-        'createdAt': action.payload.createdAt,
-        'isComplited': action.payload.isComplited,
+      const toDo: ToDoType = state.toDos[index]
+      const updatedToDo: ToDoType = {
+        ...state.toDos[index],
+        'isComplited': !toDo.isComplited,
       }
 
-      state.toDos[index] = toDo
+      state.toDos[index] = updatedToDo
     },
   },
 })

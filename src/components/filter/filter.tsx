@@ -1,16 +1,37 @@
+import { Button } from 'flowbite-react'
 import React from 'react'
-import { Rating } from 'flowbite-react'
+import { useDispatch } from 'react-redux'
+import { changeFilter } from '../../redux/filter/slice'
+import { AppDispatch } from 'redux/store'
+import { ActionType } from 'types'
 
-function Hardness(): React.JSX.Element {
+function Filter(): React.JSX.Element {
+  const dispatch: AppDispatch = useDispatch()
+
   return (
-    <Rating>
-      <Rating.Star />
-      <Rating.Star />
-      <Rating.Star />
-      <Rating.Star />
-      <Rating.Star filled={false} />
-    </Rating>
+    <div>
+      <Button.Group>
+        <Button
+          color="gray"
+          onClick={(): ActionType => dispatch(changeFilter('all'))}
+        >
+          All
+        </Button>
+        <Button
+          color="gray"
+          onClick={(): ActionType => dispatch(changeFilter('completed'))}
+        >
+          Completed
+        </Button>
+        <Button
+          color="gray"
+          onClick={(): ActionType => dispatch(changeFilter('current'))}
+        >
+          Current
+        </Button>
+      </Button.Group>
+    </div>
   )
 }
 
-export default Hardness
+export default Filter

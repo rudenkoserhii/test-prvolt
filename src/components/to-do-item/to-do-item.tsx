@@ -1,16 +1,19 @@
 import React from 'react'
 import { Card } from 'flowbite-react'
 import { ToDoType } from 'types'
+import { AppDispatch } from 'redux/store'
+import { useDispatch } from 'react-redux'
+import { editToDo } from '../../redux/to-do/slice'
 
 function ToDoItem({ toDo }: { toDo: ToDoType }): React.JSX.Element {
-  // eslint-disable-next-line unicorn/consistent-function-scoping
+  const dispatch: AppDispatch = useDispatch()
+
   const handleClick = (): void => {
-    // eslint-disable-next-line no-console
-    console.log('click')
+    dispatch(editToDo(toDo))
   }
   return (
     <Card onClick={handleClick} className="max-w-sm">
-      <p className="font-normal text-gray-700 dark:text-gray-400">
+      <p className="pointer-events-none whitespace-normal max-w-full">
         {toDo.title}
       </p>
     </Card>
