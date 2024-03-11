@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react'
 import { Footer, Modal } from 'flowbite-react'
 import {
@@ -10,113 +11,107 @@ import {
 } from 'react-icons/bs'
 import { SiFreelancer, SiUpwork } from 'react-icons/si'
 import { URL } from 'consts'
-import { ReactComponent as icon } from 'asserts/icons/logo.svg'
-import { ReactComponent as title } from 'asserts/icons/title.svg'
+// import { ReactComponent as icon } from 'asserts/icons/logo.svg'
+// import { ReactComponent as title } from 'asserts/icons/title.svg'
 import { ReactComponent as bsky } from 'asserts/icons/bsky.svg'
 
 function FooterComponent(): React.JSX.Element {
   const [openModal, setOpenModal] = useState<boolean>(false)
   return (
-    <Footer container className="bg-[#dafc00] mt-auto">
+    <Footer
+      container
+      className="bg-transparent border-4 border-[#dafc00] mt-auto"
+    >
       <div
         className="justify-between flex-col gap-6
                   w-full flex items-center sm:flex-row"
       >
-        <div className="flex gap-4 items-center">
-          <Footer.Icon
-            title="ToDo Manager"
-            href={URL.homePage}
-            icon={icon}
-            className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-[&>svg]:w-auto [&>svg]:h-[2rem] [&>svg]:hover:fill-[#a556e6]
-[&>svg]:hover:transition-all"
-          />
-          <Footer.Icon
-            title="ToDo Manager"
-            href={URL.homePage}
-            icon={title}
-            className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-[&>svg]:w-auto [&>svg]:h-[1rem] [&>svg]:hover:fill-[#a556e6]
-[&>svg]:hover:transition-all"
-          />
-        </div>
         <Footer.LinkGroup>
           <Footer.Title
             title="Contacts"
-            className="mb-0 text-[#8442b9] cursor-pointer transition-all
-                      hover:text-[#a556e6] hover:transition-all"
+            className="title mb-0 text-[#dafc00] cursor-pointer transition-all hover:transition-all"
             onClick={(): void => setOpenModal(true)}
           />
         </Footer.LinkGroup>
         <div className="flex space-x-6 sm:justify-center">
           <Footer.LinkGroup className="gap-2">
             <Footer.Icon
+              target="_blank"
+              rel="noopener noreferrer"
               title="Facebook"
               href={URL.facebook}
               icon={BsFacebook}
-              className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-                      [&>svg]:hover:fill-[#a556e6] [&>svg]:hover:transition-all"
+              className="icon"
             />
             <Footer.Icon
+              target="_blank"
+              rel="noopener noreferrer"
               title="Instagram"
               href={URL.instagram}
               icon={BsInstagram}
-              className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-                      [&>svg]:hover:fill-[#a556e6] [&>svg]:hover:transition-all"
+              className="icon"
             />
             <Footer.Icon
+              target="_blank"
+              rel="noopener noreferrer"
               title="TwitterX"
               href={URL.twitter}
               icon={BsTwitterX}
-              className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-                      [&>svg]:hover:fill-[#a556e6] [&>svg]:hover:transition-all"
+              className="icon"
             />
             <Footer.Icon
+              target="_blank"
+              rel="noopener noreferrer"
               title="GitHub"
               href={URL.github}
               icon={BsGithub}
-              className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-                      [&>svg]:hover:fill-[#a556e6] [&>svg]:hover:transition-all"
+              className="icon"
             />
             <Footer.Icon
+              target="_blank"
+              rel="noopener noreferrer"
               title="Dribble"
               href={URL.dribble}
               icon={BsDribbble}
-              className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-                      [&>svg]:hover:fill-[#a556e6] [&>svg]:hover:transition-all"
+              className="icon"
             />
             <Footer.Icon
+              target="_blank"
+              rel="noopener noreferrer"
               title="LinkedIn"
               href={URL.linledin}
               icon={BsLinkedin}
-              className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-                      [&>svg]:hover:fill-[#a556e6] [&>svg]:hover:transition-all"
+              className="icon"
             />
             <Footer.Icon
+              target="_blank"
+              rel="noopener noreferrer"
               title="Freelancer"
               href={URL.freelancer}
               icon={SiFreelancer}
-              className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-                      [&>svg]:hover:fill-[#a556e6] [&>svg]:hover:transition-all"
+              className="icon"
             />
             <Footer.Icon
+              target="_blank"
+              rel="noopener noreferrer"
               title="Upwork"
               href={URL.upwork}
               icon={SiUpwork}
-              className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-                      [&>svg]:hover:fill-[#a556e6] [&>svg]:hover:transition-all"
+              className="icon"
             />
             <Footer.Icon
+              target="_blank"
+              rel="noopener noreferrer"
               title="BlueSky"
               href={URL.bsky}
               icon={bsky}
-              className="[&>svg]:fill-[#8442b9] [&>svg]:transition-all
-                      [&>svg]:hover:fill-[#a556e6] [&>svg]:hover:transition-all"
+              className="icon"
             />
           </Footer.LinkGroup>
         </div>
       </div>
       <Modal
+        className="[&>div>div]:bg-[#dafc00]"
         dismissible
         show={openModal}
         onClose={(): void => setOpenModal(false)}

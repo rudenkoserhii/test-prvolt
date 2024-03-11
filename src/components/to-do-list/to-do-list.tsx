@@ -21,7 +21,7 @@ function ToDoList(): React.JSX.Element {
     <>
       <ul
         className="flex justify-center items-center gap-[1rem] flex-nowrap
- w-full transition-all mb-auto mt-10"
+ w-full transition-all mb-auto mt-10 slide-in-right"
       >
         {filtered
           .splice(page - 1, 5)
