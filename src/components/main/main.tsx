@@ -4,7 +4,7 @@ import React from 'react'
 
 function Main(): React.JSX.Element {
   return (
-    <div>
+    <div className="p-[1rem] flex flex-col h-full">
       <Filter />
       <ToDoList />
     </div>

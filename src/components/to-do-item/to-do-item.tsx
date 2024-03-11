@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react'
 import { Card } from 'flowbite-react'
 import { ToDoType } from 'types'
@@ -11,9 +12,19 @@ function ToDoItem({ toDo }: { toDo: ToDoType }): React.JSX.Element {
   const handleClick = (): void => {
     dispatch(editToDo(toDo))
   }
+  console.log(toDo.isComplited)
   return (
-    <Card onClick={handleClick} className="max-w-sm">
-      <p className="pointer-events-none whitespace-normal max-w-full">
+    <Card
+      onClick={handleClick}
+      className={`w-[calc((100vw-6*1rem)/5)] min-w-[calc((100vw-6*1rem)/5)] h-[14rem] cursor-default ${
+        toDo.isComplited ? 'bg-[rgba(255,255,0,0.2)]' : 'bg-[rgba(255,0,0,0.2)]'
+      } transition-all border-4 introText border-[#dafc00] dark:text-[#dafc00]
+ dark:border-[#dafc00]`}
+    >
+      <p
+        className="h-full
+ overflow-hidden text-ellipsis"
+      >
         {toDo.title}
       </p>
     </Card>

@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { FloatingLabel, Toast } from 'flowbite-react'
 import ProgressComponent from 'components/progress/progress'
-import { DURATIONS, NUMBERS } from '../../constants'
+import { DURATIONS, NUMBERS } from '../../consts'
 import { BsX } from 'react-icons/bs'
 import { nanoid } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
@@ -47,9 +47,25 @@ function Input(): React.JSX.Element {
     }
   }
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault()
+    if (value.length > 0) {
+      const toDo = {
+        'id': nanoid(),
+        'title': value,
+        'createdAt': new Date(),
+        'isComplited': false,
+      }
+      dispatch(addToDo(toDo))
+      showToastHandler()
+      setValue('')
+    }
+  }
+
   return (
     <>
-      <div
+      <form
+        onSubmit={handleSubmit}
         className={`flex-1 [&>div>div>label]:border-0 relative
  [&>div>div>label]:bg-[#8442b9] [&>div>p]:border-0 [&>div>p]:px-[4px]
  [&>div>p]:bg-[#8442b9] [&>div>p]:absolute [&>div>p]:left-1/2
@@ -79,7 +95,7 @@ peer-focus:text-[#dafc00] peer-focus:dark:text-[#dafc00]`}
           </div>
         )}
         <ProgressComponent value={value.length} />
-      </div>
+      </form>
       {showToast && (
         <Toast
           id="toast"

@@ -1,27 +1,36 @@
+/* eslint-disable max-len */
 import React from 'react'
 import { Pagination } from 'flowbite-react'
-import { useSelector } from 'react-redux'
-import { toDosValue } from '../../redux/to-do/selectors'
 
 function PaginationComponent({
   page,
   setPage,
+  quantity,
 }: {
   page: number
   setPage: (next: number) => void
+  quantity: number
 }): React.JSX.Element {
-  const { toDos } = useSelector(toDosValue)
-
-  const onPageChange = (next: number): void => setPage(next)
-
+  const onPageChange = (next: number): void => {
+    const buttonNext =
+      document.querySelector('.pagination__box')?.children[1].children[1]
+        .children[0]
+    if (next + 4 >= quantity) {
+      buttonNext?.setAttribute('disabled', 'disabled')
+    } else {
+      buttonNext?.removeAttribute('disabled')
+    }
+    setPage(next)
+  }
   return (
     <div className="flex overflow-x-auto sm:justify-center">
       <Pagination
         layout="table"
         currentPage={page}
-        totalPages={toDos.length}
+        totalPages={quantity}
         onPageChange={onPageChange}
         showIcons
+        className="pagination__box"
       />
     </div>
   )

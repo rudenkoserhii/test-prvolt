@@ -2,6 +2,7 @@
   "name": "test-prvolt",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^2.2.1",

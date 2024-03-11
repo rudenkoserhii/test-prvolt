@@ -9,10 +9,10 @@ import {
   BsLinkedin,
 } from 'react-icons/bs'
 import { SiFreelancer, SiUpwork } from 'react-icons/si'
-import { URL } from '../../constants'
-import { ReactComponent as icon } from '../../asserts/icons/logo.svg'
-import { ReactComponent as title } from '../../asserts/icons/title.svg'
-import { ReactComponent as bsky } from '../../asserts/icons/bsky.svg'
+import { URL } from 'consts'
+import { ReactComponent as icon } from 'asserts/icons/logo.svg'
+import { ReactComponent as title } from 'asserts/icons/title.svg'
+import { ReactComponent as bsky } from 'asserts/icons/bsky.svg'
 
 function FooterComponent(): React.JSX.Element {
   const [openModal, setOpenModal] = useState<boolean>(false)

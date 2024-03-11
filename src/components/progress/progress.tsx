@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-extra-parens */
 import React from 'react'
 import { Progress } from 'flowbite-react'
-import { NUMBERS } from '../../constants'
+import { NUMBERS } from '../../consts'
 
 function ProgressComponent({ value }: { value: number }): React.JSX.Element {
   return (
