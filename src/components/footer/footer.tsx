@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { Footer, Modal } from 'flowbite-react'
 import {
   BsDribbble,
@@ -8,17 +9,15 @@ import {
   BsLinkedin,
 } from 'react-icons/bs'
 import { SiFreelancer, SiUpwork } from 'react-icons/si'
-
-import React, { useState } from 'react'
-import { URL } from '../../constants'
-import { ReactComponent as icon } from '../../asserts/icons/logo.svg'
-import { ReactComponent as title } from '../../asserts/icons/title.svg'
-import { ReactComponent as bsky } from '../../asserts/icons/bsky.svg'
+import { URL } from 'consts'
+import { ReactComponent as icon } from 'asserts/icons/logo.svg'
+import { ReactComponent as title } from 'asserts/icons/title.svg'
+import { ReactComponent as bsky } from 'asserts/icons/bsky.svg'
 
 function FooterComponent(): React.JSX.Element {
   const [openModal, setOpenModal] = useState<boolean>(false)
   return (
-    <Footer container className="bg-[#dafc00]">
+    <Footer container className="bg-[#dafc00] mt-auto">
       <div
         className="justify-between flex-col gap-6
                   w-full flex items-center sm:flex-row"
@@ -124,8 +123,7 @@ function FooterComponent(): React.JSX.Element {
       >
         <Modal.Header
           className="[&>h3]:text-[#8442b9] [&>button]:text-[#a556e6]
-        [&>button]:transition-all
-                              hover:[&>button]:text-[#8442b9]
+        [&>button]:transition-all hover:[&>button]:text-[#8442b9]
         hover:[&>button]:bg-[#caa4ea] hover:[&>button]:transition-all"
         >
           Contacts
