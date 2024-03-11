@@ -1,5 +1,3 @@
-/* eslint-disable implicit-arrow-linebreak */
-/* eslint-disable arrow-parens */
 import { UnknownAction, configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer, PersistConfig } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
@@ -28,10 +26,9 @@ export const store = configureStore({
       toDosSlice.reducer,
     ),
   },
-  'middleware': getDefaultMiddleware =>
-    getDefaultMiddleware({
-      'serializableCheck': false,
-    }),
+  'middleware': (getDefaultMiddleware) => getDefaultMiddleware({
+    'serializableCheck': false,
+  }),
 })
 
 export const persistor = persistStore(store)

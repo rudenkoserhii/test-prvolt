@@ -1,5 +1,3 @@
-/* eslint-disable implicit-arrow-linebreak */
-/* eslint-disable @typescript-eslint/no-extra-parens */
 import React, { useEffect, useState } from 'react'
 import ToDoItem from 'components/to-do-item/to-do-item'
 import { useSelector } from 'react-redux'
@@ -7,7 +5,6 @@ import { toDosValue } from 'store/to-do/selectors'
 import { filterValue } from 'store/filter/selectors'
 import { NUMBERS } from '../../consts'
 import PaginationComponent from 'components/pagination/pagination'
-import { ToDoType } from 'types'
 import { filteredByFilter } from 'helpers'
 
 function ToDoList(): React.JSX.Element {
@@ -21,18 +18,17 @@ function ToDoList(): React.JSX.Element {
     <>
       <ul
         className="flex justify-center items-center gap-[1rem] flex-nowrap
- w-full transition-all mb-auto mt-10 slide-in-right"
+          w-full transition-all mb-auto mt-10 slide-in-right"
       >
         {filtered
           .splice(page - 1, 5)
           .sort(
-            (currentElement, nextElement) =>
-              Number(new Date(currentElement.createdAt)) -
-              Number(new Date(nextElement.createdAt)),
+            (prev, next) => Number(new Date(prev.createdAt)) -
+              Number(new Date(next.createdAt)),
           )
-          .map((element: ToDoType, id: number) => (
-            <ToDoItem key={id} toDo={element} />
-          ))}
+          .map(
+            (element, id) => <ToDoItem key={id} toDo={element} />,
+          )}
       </ul>
       <PaginationComponent
         page={page}

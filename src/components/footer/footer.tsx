@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useState } from 'react'
 import { Footer, Modal } from 'flowbite-react'
 import {
@@ -10,9 +9,7 @@ import {
   BsLinkedin,
 } from 'react-icons/bs'
 import { SiFreelancer, SiUpwork } from 'react-icons/si'
-import { URL } from 'consts'
-// import { ReactComponent as icon } from 'asserts/icons/logo.svg'
-// import { ReactComponent as title } from 'asserts/icons/title.svg'
+import { COLORS, URL } from 'consts'
 import { ReactComponent as bsky } from 'asserts/icons/bsky.svg'
 
 function FooterComponent(): React.JSX.Element {
@@ -20,7 +17,7 @@ function FooterComponent(): React.JSX.Element {
   return (
     <Footer
       container
-      className="bg-transparent border-4 border-[#dafc00] mt-auto"
+      className={`bg-transparent border-4 border-[${COLORS.text}] mt-auto`}
     >
       <div
         className="justify-between flex-col gap-6
@@ -29,7 +26,8 @@ function FooterComponent(): React.JSX.Element {
         <Footer.LinkGroup>
           <Footer.Title
             title="Contacts"
-            className="title mb-0 text-[#dafc00] cursor-pointer transition-all hover:transition-all"
+            className={`title mb-0 text-[${COLORS.text}] cursor-pointer
+            transition-all hover:transition-all`}
             onClick={(): void => setOpenModal(true)}
           />
         </Footer.LinkGroup>
@@ -111,33 +109,41 @@ function FooterComponent(): React.JSX.Element {
         </div>
       </div>
       <Modal
-        className="[&>div>div]:bg-[#dafc00]"
+        className={`[&>div>div]:bg-[${COLORS.text}]`}
         dismissible
         show={openModal}
         onClose={(): void => setOpenModal(false)}
       >
         <Modal.Header
-          className="[&>h3]:text-[#8442b9] [&>button]:text-[#a556e6]
-        [&>button]:transition-all hover:[&>button]:text-[#8442b9]
-        hover:[&>button]:bg-[#caa4ea] hover:[&>button]:transition-all"
+          className={`[&>h3]:text-[${COLORS.background}]
+            [&>button]:text-[${COLORS.backgroundSecondary}]
+            [&>button]:transition-all
+            hover:[&>button]:text-[${COLORS.background}]
+            hover:[&>button]:bg-[${COLORS.backgroundThird}]
+            hover:[&>button]:transition-all`}
         >
           Contacts
         </Modal.Header>
         <Modal.Body>
           <Footer.LinkGroup className="justify-center">
             <Footer.Link
-              className="text-[#a556e6]"
+              className={`text-[${COLORS.backgroundSecondary}]`}
               href="mailto:rudenko.serhii.v@gmail.com"
             >
               rudenko.serhii.v@gmail.com
             </Footer.Link>
-            <Footer.Link className="text-[#a556e6]" href="tel:+380504521144">
+            <Footer.Link
+              className={`text-[${COLORS.backgroundSecondary}]`}
+              href="tel:+380504521144"
+            >
               +380 50 452 11 44
             </Footer.Link>
           </Footer.LinkGroup>
         </Modal.Body>
         <Modal.Footer className="justify-center">
-          <p className="text-[#8442b9] font-sm text-center">Happy Coding!</p>
+          <p className={`text-[${COLORS.background}] font-sm text-center`}>
+            Happy Coding!
+          </p>
         </Modal.Footer>
       </Modal>
     </Footer>
