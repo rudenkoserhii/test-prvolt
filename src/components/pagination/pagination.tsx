@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Pagination } from 'flowbite-react'
 
 function PaginationComponent({
@@ -10,19 +10,28 @@ function PaginationComponent({
   setPage: (next: number) => void
   quantity: number
 }): React.JSX.Element {
-  const onPageChange = (next: number): void => {
-    const buttonNext =
+  const buttonNext =
       document.querySelector('.pagination__box')?.children[1].children[1]
         .children[0]
-    if (next + 4 >= quantity) {
+
+  const onPageChange = (next: number): void => {
+    if (buttonNext && next + 4 >= quantity) {
       buttonNext?.setAttribute('disabled', 'disabled')
     } else {
       buttonNext?.removeAttribute('disabled')
     }
     setPage(next)
   }
+  useEffect(() => {
+    if (buttonNext && quantity < 6) {
+      buttonNext?.setAttribute('disabled', 'disabled')
+    } else {
+      buttonNext?.removeAttribute('disabled')
+    }
+  }, [quantity])
+
   return (
-    <div className="flex overflow-x-auto sm:justify-center">
+    <div className="flex justify-center">
       <Pagination
         layout="table"
         currentPage={page}

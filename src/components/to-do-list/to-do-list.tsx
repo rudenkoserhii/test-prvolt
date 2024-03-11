@@ -30,11 +30,13 @@ function ToDoList(): React.JSX.Element {
             (element, id) => <ToDoItem key={id} toDo={element} />,
           )}
       </ul>
-      <PaginationComponent
-        page={page}
-        setPage={(next: number): void => setPage(next)}
-        quantity={quantity}
-      />
+      {quantity > 0 &&
+        <PaginationComponent
+          page={page}
+          setPage={(next: number): void => setPage(next)}
+          quantity={quantity}
+        />
+      }
     </>
   )
 }
