@@ -1,1 +1,1 @@
-export { filteredByFilter } from './filtered-by-filter'
+export { filteredByFilter } from 'helpers/filtered-by-filter'

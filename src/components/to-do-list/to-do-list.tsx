@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import ToDoItem from 'components/to-do-item/to-do-item'
 import { useSelector } from 'react-redux'
-import { toDosValue } from '../../redux/to-do/selectors'
-import { filterValue } from '../../redux/filter/selectors'
+import { toDosValue } from 'store/to-do/selectors'
+import { filterValue } from 'store/filter/selectors'
 import { NUMBERS } from '../../consts'
 import PaginationComponent from 'components/pagination/pagination'
 import { ToDoType } from 'types'
@@ -21,7 +21,7 @@ function ToDoList(): React.JSX.Element {
     <>
       <ul
         className="flex justify-center items-center gap-[1rem] flex-nowrap
- w-full transition-all mb-auto mt-5"
+ w-full transition-all mb-auto mt-10"
       >
         {filtered
           .splice(page - 1, 5)

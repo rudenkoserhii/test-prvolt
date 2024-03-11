@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from '../../asserts/images/logo.png'
-import { URL } from '../../consts'
+import logo from 'asserts/images/logo.png'
+import { URL } from 'consts'
 import Input from 'components/input/input'
 
 function Footer(): React.JSX.Element {

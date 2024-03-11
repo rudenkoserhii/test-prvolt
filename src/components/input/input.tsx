@@ -3,12 +3,12 @@
 import React, { useState } from 'react'
 import { FloatingLabel, Toast } from 'flowbite-react'
 import ProgressComponent from 'components/progress/progress'
-import { DURATIONS, NUMBERS } from '../../consts'
+import { DURATIONS, NUMBERS } from 'consts'
 import { BsX } from 'react-icons/bs'
 import { nanoid } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
-import { AppDispatch } from 'redux/store'
-import { addToDo } from '../../redux/to-do/slice'
+import { AppDispatch } from 'store/store'
+import { addToDo } from 'store/to-do/slice'
 
 function Input(): React.JSX.Element {
   const [value, setValue] = useState<string>('')

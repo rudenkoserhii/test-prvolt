@@ -2,9 +2,9 @@
 import React from 'react'
 import { Card } from 'flowbite-react'
 import { ToDoType } from 'types'
-import { AppDispatch } from 'redux/store'
+import { AppDispatch } from 'store/store'
 import { useDispatch } from 'react-redux'
-import { editToDo } from '../../redux/to-do/slice'
+import { editToDo } from 'store/to-do/slice'
 
 function ToDoItem({ toDo }: { toDo: ToDoType }): React.JSX.Element {
   const dispatch: AppDispatch = useDispatch()

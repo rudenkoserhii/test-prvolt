@@ -3,8 +3,8 @@
 import { UnknownAction, configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer, PersistConfig } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { toDosSlice } from './to-do/slice'
-import { filterSlice } from './filter/slice'
+import { toDosSlice } from 'store/to-do/slice'
+import { filterSlice } from 'store/filter/slice'
 import { StateToDos, FilterType } from 'types'
 
 const toDosPersistConfig: PersistConfig<StateToDos> = {
