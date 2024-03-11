@@ -1,14 +1,12 @@
-/* eslint-disable max-len */
-/* eslint-disable @typescript-eslint/no-extra-parens */
 import React, { useState } from 'react'
 import { FloatingLabel, Toast } from 'flowbite-react'
 import ProgressComponent from 'components/progress/progress'
-import { DURATIONS, NUMBERS } from '../../consts'
+import { COLORS, DURATIONS, NUMBERS } from 'consts'
 import { BsX } from 'react-icons/bs'
 import { nanoid } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
-import { AppDispatch } from 'redux/store'
-import { addToDo } from '../../redux/to-do/slice'
+import { AppDispatch } from 'store/store'
+import { addToDo } from 'store/to-do/slice'
 
 function Input(): React.JSX.Element {
   const [value, setValue] = useState<string>('')
@@ -67,45 +65,48 @@ function Input(): React.JSX.Element {
       <form
         onSubmit={handleSubmit}
         className={`flex-1 [&>div>div>label]:border-0 relative
- [&>div>div>label]:bg-[#8442b9] [&>div>p]:border-0 [&>div>p]:px-[4px]
- [&>div>p]:bg-[#8442b9] [&>div>p]:absolute [&>div>p]:left-1/2
- [&>div>p]:translate-x-[-50%] [&>div>p]:mt-[14px]`}
+          [&>div>div>label]:bg-[${COLORS.background}] [&>div>p]:border-0
+          [&>div>p]:px-[4px] [&>div>p]:bg-[${COLORS.background}]
+          [&>div>p]:absolute [&>div>p]:left-1/2
+          [&>div>p]:translate-x-[-50%] [&>div>p]:mt-[14px]`}
       >
         <FloatingLabel
           onChange={handleChange}
           value={value}
           variant="outlined"
           label="Type the ToDo title here..."
-          helperText={`${NUMBERS.maxValue - value.length} / ${NUMBERS.maxValue}`}
-          // color={color()}
-          className={`text-[#dafc00] bg-transparent border-4 introText
- border-[#dafc00] dark:text-[#dafc00] dark:border-[#dafc00]
- dark:focus:border-[#dafc00] focus:border-[#dafc00] rounded-md
-peer-focus:text-[#dafc00] peer-focus:dark:text-[#dafc00]`}
+          helperText=
+            {`${NUMBERS.maxValue - value.length} / ${NUMBERS.maxValue}`}
+          className={`text-[${COLORS.text}] bg-transparent border-4 introText
+            border-[${COLORS.text}] dark:text-[${COLORS.text}]
+            dark:border-[${COLORS.text}] dark:focus:border-[${COLORS.text}]
+            focus:border-[${COLORS.text}] rounded-md
+            peer-focus:text-[${COLORS.text}]
+            peer-focus:dark:text-[${COLORS.text}]`}
         />
-        {value.length > 0 && (
+        {value.length > 0 &&
           <div>
             <BsX
               onClick={(): void => setValue('')}
               title="Clear Input"
               className={`absolute top-[30px] right-3 transition-all
- -translate-y-1/2 cursor-pointer h-[1.5rem] w-[1.5rem]
- hover:bg-[#dafc00]/25 rounded-md hover:transition-all`}
+                -translate-y-1/2 cursor-pointer h-[1.5rem] w-[1.5rem]
+                hover:bg-[${COLORS.text}]/25 rounded-md hover:transition-all`}
             />
           </div>
-        )}
+        }
         <ProgressComponent value={value.length} />
       </form>
-      {showToast && (
+      {showToast &&
         <Toast
           id="toast"
-          className={
-            'scale-in-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 justify-center text-[#dafc00] bg-[#dafc00]/50'
-          }
+          className={`scale-in-center absolute top-1/2 left-1/2 -translate-x-1/2
+            -translate-y-1/2 justify-center text-[${COLORS.text}]
+            bg-[${COLORS.text}]/50`}
         >
           ToDo was added!
         </Toast>
-      )}
+      }
     </>
   )
 }

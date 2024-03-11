@@ -45,6 +45,7 @@
     "@typescript-eslint/parser": "^5.0.0",
     "@wemake-services/eslint-config-javascript": "^2.1.1",
     "@wemake-services/eslint-config-typescript": "^3.1.1",
+    "autoprefixer": "^10.4.18",
     "prettier": "3.2.5"
   }
 }

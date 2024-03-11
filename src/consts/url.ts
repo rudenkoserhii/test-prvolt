@@ -1,5 +1,5 @@
 export const URL = {
-  'homePage': 'https://todomanager.vercel.app',
+  'homePage': 'https://todo-manager-site.netlify.app/',
   'dribble': 'https://dribbble.com/rudenkoserhii',
   'twitter': 'https://twitter.com/SerhiiRudenkoV/',
   'facebook': 'https://www.facebook.com/profile.php?id=100005434448335',

@@ -1,4 +1,3 @@
-/* eslint-disable arrow-parens */
 import { createSlice } from '@reduxjs/toolkit'
 import { ActionType, ToDoType } from 'types'
 
@@ -15,7 +14,7 @@ export const toDosSlice = createSlice({
     },
     editToDo(state, action: ActionType) {
       const index = state.toDos.findIndex(
-        element => element.id === action.payload.id,
+        (element) => element.id === action.payload.id,
       )
       const toDo: ToDoType = state.toDos[index]
       const updatedToDo: ToDoType = {

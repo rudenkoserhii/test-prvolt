@@ -10,7 +10,8 @@
   ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"]
+      "files": ["*.ts", "*.tsx"],
+      "rules": { "no-shadow": "off" }
     }
   ],
   "parserOptions": {
@@ -18,5 +19,5 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": { "no-shadow": "off" }
 }

@@ -4,7 +4,7 @@ import Main from './components/main/main'
 import FooterComponent from './components/footer/footer'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
-import { persistor, store } from './redux/store'
+import { persistor, store } from 'store/store'
 
 function App(): React.JSX.Element {
   return (
