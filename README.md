@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# Project Name
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ToDo List Application
 
-## Available Scripts
+A simple ToDo List application built with React and Redux for state management.
 
-In the project directory, you can run:
+### Features
 
-### `npm start`
+- **Add a New Record:** Users can add a new task to the list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Character Limitation:** A new record is added only if its length is less than or equal to N characters.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Display List:** Displays a list of added records.
 
-### `npm test`
+- **Task Status Toggle:** Clicking on a task's name switches its status between Completed and Not Completed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Filter by Type:** Users can filter tasks based on their type (All, Completed, Current).
 
-### `npm run build`
+- **Task Counter:** Displays the count of completed and uncompleted tasks.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **State Management:** Utilizes Redux for state management.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Linter:** The project adheres to the [wemake-frontend-styleguide](https://github.com/wemake-services/wemake-frontend-styleguide).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tech Stack
 
-### `npm run eject`
+- React
+- Redux
+- TypeScript
+- Flowbite-React (for styling)
+- @react-spring/web
+- Redux Toolkit
+- React-Redux
+- Tailwind CSS
+- TypeScript
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Project Structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The project follows a modular structure:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **`src/components/`**: Contains React components.
+- **`src/redux/`**: Manages Redux-related files (actions, reducers, slices).
+- **`src/helpers/`**: Holds utility functions for data manipulation.
+- **`src/types/`**: Defines TypeScript types/interfaces.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Setting Up the Project
 
-## Learn More
+1. Clone the repository:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   git clone <repository-url>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+2. Install dependencies:
+
+    ```bash
+    cd project-directory
+    npm install
+
+3. Start the development server:
+
+    ```bash
+    npm start
+
+4. Scripts
+ - npm start: Starts the development server.
+ - npm build: Builds the production-ready application.
+ - npm run lint: Runs the linter to enforce code style.
+
+5. Dependencies
+ - @react-spring/web
+ - @reduxjs/toolkit
+ - flowbite-react
+ - react
+ - react-dom
+ - react-redux
+ - react-scripts
+ - redux-persist
+ - tailwindcss
+ - typescript
+
+6. Dev Dependencies
+ - @typescript-eslint/eslint-plugin
+ - @typescript-eslint/parser
+ - @wemake-services/eslint-config-javascript
+ - @wemake-services/eslint-config-typescript
+ - autoprefixer
+ - prettier
